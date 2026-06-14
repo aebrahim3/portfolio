@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amjadh Ebrahim — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1117;
+    --panel:#161b22;
+    --line:#21262d;
+    --text:#e6edf3;
+    --muted:#7d8590;
+    --accent:#3fb950;
+    --accent-2:#58a6ff;
+    --amber:#d29922;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:var(--mono);font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  header{border-bottom:1px solid var(--line);background:var(--panel)}
+  .bar{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--line)}
+  .dot{width:12px;height:12px;border-radius:50%}
+  .dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g{background:#27c93f}
+  .bar .path{margin-left:12px;color:var(--muted);font-size:13px}
+  .hero{padding:64px 24px 56px}
+  .prompt{color:var(--accent);font-weight:500}
+  .hero h1{
+    font-family:var(--display);font-size:clamp(2.4rem,6vw,3.8rem);
+    font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:14px 0 6px;
+  }
+  .hero .role{font-family:var(--display);font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--muted);font-weight:500}
+  .hero p.bio{max-width:640px;margin:22px 0 28px;color:var(--text)}
+  .hero p.bio .c{color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .links a{
+    border:1px solid var(--line);padding:8px 14px;border-radius:6px;
+    color:var(--text);font-size:13px;background:var(--bg);transition:.15s;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--accent);font-size:13px;font-weight:500;margin-bottom:6px}
+  h2{font-family:var(--display);font-size:1.8rem;font-weight:700;letter-spacing:-.01em;margin-bottom:28px}
+
+  .proj{
+    border:1px solid var(--line);border-radius:10px;background:var(--panel);
+    padding:22px 24px;margin-bottom:18px;transition:.15s;
+  }
+  .proj:hover{border-color:#30363d;transform:translateY(-2px)}
+  .proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .proj h3{font-family:var(--display);font-size:1.25rem;font-weight:700}
+  .proj .meta{color:var(--amber);font-size:12px;white-space:nowrap}
+  .proj .desc{margin:12px 0 16px;color:var(--text)}
+  .proj .role-line{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .proj .role-line b{color:var(--text);font-weight:500}
+  .stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+  .tag{
+    font-size:11.5px;padding:3px 9px;border-radius:20px;
+    background:var(--bg);border:1px solid var(--line);color:var(--muted);
+  }
+  .proj .actions a{font-size:13px;margin-right:18px}
+  .proj .actions a::before{content:"→ "}
+
+  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+  .skillcat h4{color:var(--accent);font-size:13px;margin-bottom:8px;font-weight:500}
+  .skillcat p{color:var(--text);font-size:14px}
+
+  .twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:20px 22px}
+  .card h3{font-family:var(--display);font-size:1.1rem;font-weight:700;margin-bottom:2px}
+  .card .meta{color:var(--amber);font-size:12px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:13.5px}
+
+  .contact p{max-width:560px;color:var(--text)}
+  .contact .email{display:inline-block;margin-top:16px;font-size:1.1rem;color:var(--accent)}
+
+  footer{padding:28px 0;color:var(--muted);font-size:12.5px;text-align:center}
+  .cursor{display:inline-block;width:9px;height:1.05em;background:var(--accent);vertical-align:-2px;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+    <h1>Amjadh Ebrahim</h1>
+    <div class="role">Software Developer · Vancouver, BC · Open to Relocate</div>
+    <p class="bio">
+      Computer Systems Technology grad (BCIT '26) with a
+      B.Sc. in Mathematics from UBC. I built full-stack web and Android applications —
+      backends in Python, Java, JavaScript &amp; Kotlin, frontends with HTML, CSS &amp; Bootstrap.<span class="cursor"></span>
+    </p>
+    <div class="links">
+      <a href="https://github.com/aebrahim3" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/amjadh-ebrahim-0a7b2732b/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="projects">
+    <h2>Selected work</h2>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Gigsup</h3>
+        <span class="meta">BCIT Capstone · Apr–May 2026</span>
+      </div>
+      <p class="desc">
+        A career-matching web application for students. It takes in resumes and
+        personality-assessment results and returns each student's top 5 career matches.
+      </p>
+      <p class="role-line"><b>My role:</b> Back-end — built the resume extraction service, the personality-assessment questionnaire, and the career-matching algorithm, then wired the services together. Also owned documentation. Used LLMs for selected services.</p>
+      <div class="stack">
+        <span class="tag">Python</span><span class="tag">HTML</span>
+        <span class="tag">JavaScript</span><span class="tag">REST APIs</span><span class="tag">LLMs</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>TranscribeApp</h3>
+        <span class="meta">BCIT · Jan–Apr 2026</span>
+      </div>
+      <p class="desc">
+        An Android app that helps a caretaker understand and communicate with a spouse
+        who has Alzheimer's. It converts audio into phonemes — the internationally
+        recognized symbols covering every human speech sound.
+      </p>
+      <p class="role-line"><b>My role:</b> Built the in-app recording feature and a dictionary repository for saved clips, and designed the front-end.</p>
+      <div class="stack">
+        <span class="tag">Kotlin</span><span class="tag">Android</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>GroundWork</h3>
+        <span class="meta">BCIT · Jan–Apr 2026</span>
+      </div>
+      <p class="desc">
+        A work-management system handling employees, timesheets, work packages, labour
+        grades, Earned Value reports, and projects — built across the full software
+        development lifecycle.
+      </p>
+      <p class="role-line"><b>My role:</b> Owned the Timesheet section, working on both front-end and back-end.</p>
+      <div class="stack">
+        <span class="tag">Java</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Pokemon-Matching</h3>
+        <span class="meta">BCIT · May–Jun 2025</span>
+      </div>
+      <p class="desc">
+        A card-matching game that fetches from a Pokémon library, with power-ups,
+        difficulty modes, and background themes. Hosted on Netlify and shared with friends.
+      </p>
+      <p class="role-line"><b>My role:</b> Independent developer — designed and built the full game.</p>
+      <div class="stack">
+        <span class="tag">JavaScript</span><span class="tag">Netlify</span>
+      </div>
+      <div class="actions">
+        <a href="https://fixed-version-3-2537.netlify.app/" target="_blank" rel="noopener">Play</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Xplore</h3>
+        <span class="meta">BCIT · Apr–May 2025</span>
+      </div>
+      <p class="desc">
+        A travel app that filters optimal hotels by booking date.
+      </p>
+      <p class="role-line"><b>My role:</b> Built the interactive map with hotel markers and clustering — clicking a cluster zooms into its hotels. Served as Scrum Master on several sprints.</p>
+      <div class="stack">
+        <span class="tag">JavaScript</span><span class="tag">Maps</span><span class="tag">Scrum</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Pathways</h3>
+        <span class="meta">BCIT · Sep–Dec 2024</span>
+      </div>
+      <p class="desc">
+        A Squamish language-learning app aimed at keeping an endangered language alive.
+      </p>
+      <p class="role-line"><b>My role:</b> Designed learning quizzes, compiled a large Squamish word list into a CSV synced to Firebase, and designed the main page used across the app.</p>
+      <div class="stack">
+        <span class="tag">JavaScript</span><span class="tag">HTML</span>
+        <span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">Firebase</span>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Quran App <span style="color:var(--muted);font-weight:400;font-size:.85em">· in progress</span></h3>
+        <span class="meta">Personal</span>
+      </div>
+      <p class="desc">
+        An Android app for reading the Quran, pulling content from the Quran.com API,
+        with Google sign-in and a clean reading experience.
+      </p>
+      <p class="role-line"><b>My role:</b> Solo developer — currently building out the app with an MVVM architecture, Firebase authentication, and Retrofit networking.</p>
+      <div class="stack">
+        <span class="tag">Kotlin</span><span class="tag">Android</span>
+        <span class="tag">Retrofit</span><span class="tag">Firebase</span>
+      </div>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Work &amp; service</h2>
+    <div class="twocol">
+      <div class="card">
+        <h3>Velicham Tech</h3>
+        <div class="meta">Intern · Aug 2025 – Present</div>
+        <p>Application involves TypeScript. Development to be streamlined using BMAD.</p>
+      </div>
+      <div class="card">
+        <h3>Canadian Army — 39 Signal Regiment</h3>
+        <div class="meta">Private, Reserves · Sep 2024 – Jan 2026</div>
+        <p>Trained in map-reading and weapons handling under a strict code of conduct built on trust, respect, and fraternity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Toolkit</h2>
+    <div class="skillgrid">
+      <div class="skillcat">
+        <h4>Languages</h4>
+        <p>Java · Python · Kotlin · MATLAB · R · C++ · JavaScript</p>
+      </div>
+      <div class="skillcat">
+        <h4>Frameworks &amp; web</h4>
+        <p>.NET (C#) · RESTful APIs · HTML5 · CSS · Bootstrap</p>
+      </div>
+      <div class="skillcat">
+        <h4>Databases</h4>
+        <p>Firebase · MySQL · MongoDB · PostgreSQL · MSSQL</p>
+      </div>
+      <div class="skillcat">
+        <h4>Tools &amp; platforms</h4>
+        <p>Docker · Kubernetes · Git · Linux · Figma · Scrum</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="twocol">
+      <div class="card">
+        <h3>BCIT</h3>
+        <div class="meta">Computer Systems Technology (Diploma) · Class of 2026</div>
+      </div>
+      <div class="card">
+        <h3>University of British Columbia</h3>
+        <div class="meta">B.Sc., Major in Mathematics · Class of 2024</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in touch</h2>
+    <p>
+      I'm actively looking for software development roles and co-ops, and I'm open
+      to relocating. The fastest way to reach me is email.
+    </p>
+    <a class="email" href="mailto:eamjadh@gmail.com">eamjadh@gmail.com</a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span class="prompt">$</span> built with HTML, CSS &amp; coffee — © 2026 Amjadh Ebrahim
+</footer>
+</body>
+</html>
